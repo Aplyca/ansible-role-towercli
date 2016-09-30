@@ -1,3 +1,10 @@
 ---
 towercli:
-  no_log: False
+  profiles:
+    - name: general
+      settings:
+        host: tower.example.com
+        username: leeroyjenkins
+        password: myPassw0rd
+        verify_ssl: "false"
+

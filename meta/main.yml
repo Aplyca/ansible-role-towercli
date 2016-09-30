@@ -1,6 +1,5 @@
 ---
-dependencies:
-  - { role: Galaxy.AnsibleRole, tags: ["ansible-role"] }
+dependencies: []
 
 galaxy_info:
   author: Aplyca

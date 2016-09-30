@@ -40,7 +40,6 @@ find ./ -type f -exec sed -i '' -e 's/Tower CLI/New Role/g' {} \;
 find ./ -type f -exec sed -i '' -e 's/TowerCLI/NewRole/g' {} \;
 ```
 
-
 Dependencies
 ------------
 

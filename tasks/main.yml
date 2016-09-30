@@ -1,2 +1,17 @@
 ---
-    - debug: msg="This is a task" verbosity=1
+- name: Install Python pip
+  become: yes
+  apt:
+    name: python-pip
+
+- name: Install Tower CLI package
+  become: yes
+  pip: 
+    name: ansible-tower-cli
+
+- name: Configure Tower CLI access
+  template:
+    src: .tower_cli.cfg.j2
+    dest: "~/.tower_cli.cfg"
+  no_log: "{{ towercli.no_log }}"
+  tags: config

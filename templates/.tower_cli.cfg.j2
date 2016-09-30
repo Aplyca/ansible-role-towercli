@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+
+{% for profile in towercli.profiles %}
+[{{ profile.name }}]
+{% for setting, value in profile.settings|dictsort(true)  if profile.settings %}
+{{ setting }} = {{ value }}
+{% endfor %}
+
+{% endfor %}
+
