@@ -1,0 +1,9 @@
+---
+- name: Ansible Tower CLI
+  hosts: all
+  gather_facts: no  
+  roles:
+    - { role: Aplyca.TowerCLI, tags: ["towercli"] }
+  post_tasks:
+    - debug: var=towercli verbosity=1
+      tags: vars    
