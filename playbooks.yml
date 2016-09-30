@@ -3,7 +3,4 @@
   hosts: all
   gather_facts: no  
   roles:
-    - { role: Aplyca.TowerCLI, tags: ["towercli"] }
-  pre_tasks:
-    - debug: var=towercli verbosity=1
-      tags: vars    
+    - { role: Aplyca.TowerCLI, tags: ["towercli"] }    

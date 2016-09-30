@@ -1,4 +1,7 @@
 ---
+- debug: var=towercli verbosity=1
+  tags: vars 
+
 - name: Install Python pip
   become: yes
   apt:
