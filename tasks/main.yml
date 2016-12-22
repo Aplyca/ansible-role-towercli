@@ -1,6 +1,6 @@
 ---
 - debug: var=towercli verbosity=1
-  tags: vars 
+  tags: vars
 
 - name: Install Python pip
   become: yes
@@ -9,12 +9,14 @@
 
 - name: Install Tower CLI package
   become: yes
-  pip: 
+  pip:
     name: ansible-tower-cli
+    state: latest
 
 - name: Configure Tower CLI access
   template:
     src: .tower_cli.cfg.j2
     dest: "~/.tower_cli.cfg"
+    mode: 0600
   no_log: "{{ towercli.no_log }}"
   tags: config
