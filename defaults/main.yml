@@ -1,4 +1,5 @@
 ---
 towercli:
+  pip_package: python-pip  
   no_log: False
   profiles: []

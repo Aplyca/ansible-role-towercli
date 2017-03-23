@@ -1,11 +1,16 @@
 ---
+- name: Conditionally load variables
+  include_vars:
+    file: Ubuntu_greater_than_16.yml
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '16'
+
 - debug: var=towercli verbosity=1
   tags: vars
 
 - name: Install Python pip
   become: yes
   apt:
-    name: python-pip
+    name: "{{ towercli.pip_package }}"
 
 - name: Install Tower CLI package
   become: yes
